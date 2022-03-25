@@ -5,6 +5,7 @@ import fr.sdv.jpa.entity.*;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import java.time.LocalDate;
 
 public class App {
@@ -91,8 +92,9 @@ public class App {
         System.out.println("### Création d'un Product ###");
         em.persist(unProduct2);
 
-        // Requetes
-
+        // Requete
+        TypedQuery<Animal> query = em.createQuery("SELECT animal from Animal animal WHERE DTYPE = 'Animal'", Animal.class);
+        Animal animal = query.getResultList().get(0);
 
         // FIN TRANSACTION
         em.getTransaction().commit();
