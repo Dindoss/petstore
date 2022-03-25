@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="sdv-petstore-jpa">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>fr.sdv.jpa.entity.Address</class>
+        <class>fr.sdv.jpa.entity.PetStore</class>
+        <class>fr.sdv.jpa.entity.Product</class>
+        <class>fr.sdv.jpa.entity.Animal</class>
+        <class>fr.sdv.jpa.entity.Cat</class>
+        <class>fr.sdv.jpa.entity.Fish</class>
+        <class>fr.sdv.jpa.entity.ProdType</class>
+        <class>fr.sdv.jpa.entity.Product</class>
+        <class>fr.sdv.jpa.entity.FishLivEnv</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/petstore"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+
+            <property name="hibernate.archive.autodetection" value="" />
+
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+        </properties>
+    </persistence-unit>
+
+</persistence>
